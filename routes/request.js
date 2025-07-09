@@ -9,7 +9,6 @@ const router = express.Router();
 const verifyAdmin = async (req, res, next) => {
   const { email } = req.body;
 
-  const num=123
   try {
     const admin = await User.findOne({ email, role: 'admin' }); // Assuming 'role' identifies admin users
     if (!admin) {
